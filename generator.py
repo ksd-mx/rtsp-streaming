@@ -42,4 +42,7 @@ while True:
 
     video.release()
 
-    pathlib.Path.rename(filename, f'stream/input.mp4')
+    # uncomment if using continuous files
+    # pathlib.Path.rename(filename, f'stream/{filename}') 
+    # uncomment if using static file replaced everytime
+    # pathlib.Path.rename(filename, f'stream/input.mp4')
