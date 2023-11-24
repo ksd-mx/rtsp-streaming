@@ -2,26 +2,10 @@ version: '3'
 
 services:
   rtsp-server:
-    build: .
-    volumes:
-      - ./stream:/app/stream
-    # Ports and other settings for the RTSP server
+    platform: linux/amd64
+    image: steabert/gst-rtsp-launch
     ports:
       - "8554:8554"
-
-  generator:
-    build: .
-    volumes:
-      - ./stream:/app/stream
-    command: python3 generator.py
-    # Additional settings for the generator service
-
-  streamer:
-    build: .
-    volumes:
-      - ./stream:/app/stream
-    command: python3 streamer-rtsp.py
-    # Additional settings for the generator service
 
 volumes:
   stream:

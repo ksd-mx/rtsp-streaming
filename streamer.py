@@ -17,11 +17,11 @@ class VideoOutputWatcher(FileSystemEventHandler):
         # Convert MP4 to RTSP using ffmpeg
         rtsp_stream_url = self.convert_to_rtsp(video_path)
         # Push to API
-        self.push_to_api(rtsp_stream_url)
+        # self.push_to_api(rtsp_stream_url)
 
     def convert_to_rtsp(self, video_path):
         # Define the RTSP stream URL (adjust according to your server setup)
-        rtsp_stream_url = "rtsp://localhost:8554/mystream"
+        rtsp_stream_url = "rtsp://0.0.0.0:8554/test"
         # Command to use ffmpeg to stream the video to the RTSP server
 
         ffmpeg_command = [
