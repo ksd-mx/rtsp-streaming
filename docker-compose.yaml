@@ -6,6 +6,3 @@ services:
     image: steabert/gst-rtsp-launch
     ports:
       - "8554:8554"
-
-volumes:
-  stream:
