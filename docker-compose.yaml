@@ -7,5 +7,22 @@ services:
     ports:
       - "8554:8554"
 
+  rtsp-gen:
+    platform: linux/amd64
+    build: .
+    command: python3 generator.py
+    volumes:
+      - ./stream:/app/stream
+
+  rtsp-stream:
+    platform: linux/amd64
+    depends_on: 
+      - rtsp-server
+      - rtsp-gen
+    build: .
+    command: python3 streamer.py
+    volumes:
+      - ./stream:/app/stream
+
 volumes:
   stream:

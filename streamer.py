@@ -25,7 +25,7 @@ class VideoOutputWatcher(FileSystemEventHandler):
         # Command to use ffmpeg to stream the video to the RTSP server
 
         ffmpeg_command = [
-            'ffmpeg',
+            './ffmpeg',
             '-re',
             '-i', video_path,
             '-c:v', 'copy',
